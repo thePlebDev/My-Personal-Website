@@ -1,0 +1,15 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Hi, I'm Tristan</h1>
+    <p class="lead">I am currently a computer science strudent at Mount Allison University in
+    				New Brunswick, Canada. I have decided that my field of study will be backend
+    				web development.I have built this site and all other projects with a django
+    				backend and bootstrap to style</p>
+    <p>Feel free to <a href="{% url 'contact' %}"> contact</a> me if you have any questions</p>
+  </div>
+</div>
+{% endblock content %}

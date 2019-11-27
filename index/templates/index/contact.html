@@ -1,0 +1,13 @@
+{% extends 'index/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+	<h2> Currently working on gettting this hooked up.
+		 You can find me on <a href="https://twitter.com/Tristanthewebd1">Twitter</a></h2>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button type="submit">Submit</button>
+	</form>
+{% endblock content %}

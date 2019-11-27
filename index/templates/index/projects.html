@@ -1,0 +1,20 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+
+	<h1>Welcome to the projects page</h1>
+{% for project in projects%}
+  	<div class="card">
+    <div class="card-header">
+      {{ project.title }}
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ project.about }}</p>
+      <a href="{{ project.github_url }}" class="btn btn-primary">Github Code</a>
+      <a href="{{ project.live_project_url }}" class="btn btn-primary">Live Project</a>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock content %}

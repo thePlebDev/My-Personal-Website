@@ -1,0 +1,88 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Personal blog</title>
+
+    <!-- link for the tiny mce stylings -->
+    <link rel="stylesheet" href="{% static 'tinymce/css/prism.css' %}">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/blog/">
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+  <header class="blog-header py-3">
+    
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex ">
+      <a class="p-2 text-muted" href="{% url 'home' %}">Home</a>
+      <a class="p-2 text-muted" href="{% url 'projects' %}">Projects</a>
+      <a class="p-2 text-muted" href="{% url 'about' %}">About</a>
+      <a class="p-2 text-muted" href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </div>
+
+  
+
+
+</div>
+{% if messages %}
+      {% for message in messages %}
+      <div class=" p-4 p-md-5 alert alert-{{ message.tags }}">
+        {{ message }}    
+      </div>
+      {% endfor %}
+{% endif %}
+
+<main role="main" class="container">
+	{% block content %}
+    {% endblock content %}
+    
+
+    </div><!-- /.blog-main -->
+
+  </div><!-- /.row -->
+
+</main><!-- /.container -->
+
+  <script src="{% static 'tinymce/js/prism.js' %}"></script>
+</body>
+</html>

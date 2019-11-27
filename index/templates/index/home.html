@@ -1,0 +1,58 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+
+	<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+
+	
+
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Backend web dev blog</h1>
+                                         
+      <p class="lead mb-0"><a href="{% url 'projects' %}" class="text-white font-weight-bold">Click Here For Projects</a></p>
+    </div>
+  </div>
+
+	{% for posts in posts %}
+	  <div class="row">
+	    <div class="col-md-8 blog-main">
+	      
+	      <div class="blog-post">
+	      	
+	       		<h2 class="blog-post-title"><a href="{% url 'detail' posts.pk %}">{{ posts.title }}</a></h2>
+	        	<p class="blog-post-meta">{{ posts.date }}, by <a href="{% url 'about' %}">{{ posts.author }}</a></p>
+	        
+
+		        <p>{{ posts.about }}</p>
+		        <hr>
+	 
+		      </div><!-- /.blog-post -->
+
+
+	 {% endfor %}
+
+	 <nav class="blog-pagination">
+    {% if is_paginated %}
+
+    	{% if page_obj.has_previous %}
+
+    		<a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous Page</a>
+    	{% endif %}
+
+
+    	{% if page_obj.has_next %}
+
+    		<a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next Page</a>
+    	{% endif %}
+
+    {% endif %}
+      </nav>
+
+<footer class="blog-footer">
+	
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+
+</footer>
+
+{% endblock content %}
